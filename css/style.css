@@ -1,0 +1,1039 @@
+
+/* TIPOGRAFÍAS */
+/* 
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Lobster+Two|Raleway&display=swap" rel="stylesheet">
+*/
+
+/* 
+
+font-family: 'Raleway', sans-serif; TEXTO
+font-family: 'Comfortaa', cursive; TITULOS
+font-family: 'Amatic SC', cursive; MENU
+font-family: 'Lobster Two', cursive;TITULO INDICE
+
+*/
+
+
+/****************************** 
+        --- GENERAL ---
+******************************/
+
+html {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* Redimensionado del tamaño de fuente*/
+    font-size: calc( 12px + (20 - 12) * ( (100vw - 360px) / (1600 - 360) ) );
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5 { font-family: 'Comfortaa', cursive;}
+
+p { 
+    font-family:'Raleway', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+.mayus{text-transform: uppercase;}
+
+/****************************** 
+        --- MENU ---
+******************************/
+
+/* Contenedor principal con el menu y el main */
+#principal {
+    position: relative;
+    min-height: calc(100vh - 70px);
+}
+
+/* -- Menú de navegación --  */
+nav { 
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.925);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Imagen del menú */
+.imagen-patatas{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/flower-color.png);
+    background-size: cover;
+
+    cursor: pointer;
+}
+
+/* Ocultación de etiqueta e imput en el menú */
+nav label, nav input {display: none;}
+
+/* Lista de menú */
+.menu { 
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    display: flex;
+}
+
+.menu ul{display: none;}
+
+.menu li{
+    display: inline-block;
+    list-style: none;
+    flex:1;
+}
+
+.menu a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: black;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Aplicación de efectos en las opciones de menú */
+.menu a::before{
+    top: 50%;
+    right: 20%;
+    left: 20%;
+    content: '';
+    border-left: 12px solid rgb(228, 190, 69);
+    border-right: 12px solid rgb(228, 190, 69);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 3px;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+.menu a:hover{
+    color:  rgb(206, 89, 63);
+}
+.menu a:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+
+
+
+/********************************* 
+        --- inicio.html ---
+*********************************/
+
+/************  HEADER inicio.html ************/
+
+/* Cabecera pantalla completa */
+.inicio header {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 1fr auto 1fr;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    /* imagen de fondo */
+    background-image: url(../img/index.background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    object-fit: cover;
+}
+
+/* Título header único para la página de inicio */
+.inicio header h1{
+    grid-area: 2 / 1 / 3 / 2;
+    font-family: 'Lobster Two', cursive;
+    font-weight: lighter;
+    font-size: 2.2rem;
+    color:white;
+    text-shadow: 2px 1px 8px rgba(75, 75, 75, 0.8);
+    justify-self: center;
+}
+
+/* imagen con el logo de la compañía */
+.inicio header img{
+    width: 200px;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: center;
+    align-self: end;
+}
+
+/* Hipervínculo interno*/
+.inicio header a{
+    grid-area: 3 / 1 / 4 / 2;
+    justify-self: center;
+    align-self: end;
+}
+
+/* Icono señar indicadora hacia abajo */
+.fa-angle-double-down{
+    padding: 1.2rem;
+    color:white;
+    text-shadow: 2px 1px 8px rgba(75, 75, 75, 0.671);
+    /* Animación con animate.css */ 
+    animation: bounce 0.8s 0.5s;
+    animation-iteration-count: 5; 
+}
+
+
+/************  MAIN inicio.html  ************/
+
+/* Estructura principal. Se le aplica Grid */
+.inicio .estructura{
+    max-width: 90vw;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 3rem 0;
+}
+
+/* Frase motivadora de presentación */
+.estructura h2{
+    grid-area: 1 / 1 / 2 /3;
+    font-size: 1rem;
+    padding: 3rem;
+    line-height: 1.5rem;
+    font-family: 'Raleway', sans-serif; 
+    text-align: center;
+    
+}
+
+/* Sección contenedora de los artículos. Se le aplica Grid */
+.estructura section{ 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+
+    grid-area: 2 / 1 / 3 / 3;
+    min-height: 450px;
+    margin-top: 3rem;
+}
+
+/* Iconos de comillas (derecha e izquierda de fontawesome) */
+.fa-quote-left{padding-right: 1rem;}
+.fa-quote-right{padding-left: 1rem;}
+
+/* Posicionamiento de los artículos 1, 2 y 3 */
+.inicio article{
+    position: relative;
+    text-align: center;
+} 
+
+/* Posicionamiento del texto de los artículos 1, 2 y 3 */
+.inicio article h3{ 
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.404);
+    padding: 2rem 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    color: black;
+    font-weight: 900;
+    font-size:1.2rem;
+}
+
+/* Contenedor Artículo 1.Nosotros */
+.box-us{
+    grid-area: 1 / 1 / 2 / 7;
+    background-image: url(../img/nosotros.background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    object-fit: cover;
+    border-bottom: 3px solid rgb(187, 239, 193, 0.4); 
+}
+
+/* Contenedor Artículo 2.Nuestros trabajos */
+.box-work{
+    grid-area: 2 / 1 / 3 /7;
+    background-image: url(../img/trabajos.background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    object-fit: cover;
+    border-right: 3px solid rgba(229, 106, 118, 0.4); 
+}
+
+/* Contenedor Artículo 3.Contacto */
+.box-contact{
+    grid-area: 3 / 1 / 4 / 7;
+    background-image: url(../img/contacto.background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    object-fit: cover;
+    border-left: 3px solid rgba(129, 139, 232, 0.4); 
+}
+
+
+
+/****************************** 
+         --- FOOTER ---
+******************************/
+
+/* Variables con colores*/
+:root {
+    --in-blue: rgb(79, 140, 167);
+    --face-blue: rgb(88, 109, 146);
+    --twit-blue: rgb(99, 180, 214);
+    --contact-green: #92dbb5;
+}
+
+footer{
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    min-height: 70px; 
+    background-color:darkgrey;
+    width: 100%;
+    margin: 0;
+}
+
+/* Contenedor copyright y autor */
+
+.autoria{
+    width: 50%;
+    float: left;
+}
+
+/* Estilo de párrafo */
+.autoria p{
+    padding-left: 10%;
+    color: white;
+    font-size: 0.7rem;
+    line-height: 70px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+/* Contenedor redes sociales */
+.social{
+    width: 50%;
+    float: right;
+}
+
+/* Estilo hipervínculo redes sociales */
+.social a{
+    float: left;
+    line-height: 70px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    transition: all, 0.3s;
+}
+
+/* hover hipervínculo redes sociales */
+.social a:hover{
+    background-color: #222;
+    transition: all, 0.3s;
+}
+
+.facebook, .twitter, .linkedin{
+    font-size: 1rem;
+    width: 20%;
+}
+
+/* Aplicación de variables de color a cada red social */
+.facebook{background-color: var(--face-blue);}
+.twitter{background-color: var(--twit-blue);}
+.linkedin{background-color: var(--in-blue)}
+.contactanos{
+    background-color: var(--contact-green);
+    font-size: 0.8rem;
+    width: 40%
+}
+
+
+
+
+/****************************** 
+     --- nosotros.html ---
+******************************/
+
+/************  MAIN nosotros.html  ************/
+/* Separación de la section */
+.nosotros section{
+    padding: 4rem 0;
+}
+
+/* Estilo de título */
+.nosotros section h1{
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding-bottom: 4rem;
+    text-align: center;
+    text-shadow: 3px 1px 3px rgba(255,255,255,0.74);
+}
+
+.nosotros article{margin-bottom: 2px}
+
+/* Ocultando los títulos y párrafos de las tarjetas  */
+.vuelta-front h2, .vuelta-front p{display: none;}
+
+/* Imágenes trabajadores */
+.vuelta-front img{ width:320px;}
+
+/* Imagen de fondo fija para todo el main */
+.nosotros #principal{
+    background-image: url(../img/nosotros.background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
+}
+
+/* Grid para los contenedores */
+
+.vuelta-caja {
+    background-color: transparent;
+    width: 55vmax;
+    margin: 0 auto;
+}
+
+.vuelta{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Estilos de la caja delantera*/
+.vuelta-front {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+/* Estilos de la caja trasera */
+.vuelta-back {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    min-height: 400px;
+    padding: 2rem;
+}
+
+.vuelta-back h2{
+    font-size: 1.2rem;
+    padding-bottom: 0.9rem;
+} 
+.vuelta-back h3{ padding-bottom: 1rem;}
+
+.vuelta-back p{
+    text-align: justify;
+    padding-top: 2rem;
+}
+
+
+
+
+/****************************** 
+     --- trabajos.html ---
+******************************/
+
+/************  MAIN trabajos.html  ************/
+/* Título */
+.trabajos main h1{
+   font-size: 1.5rem;
+    font-weight: 900;
+    padding: 4rem 0;
+    text-align: center;
+    text-shadow: 2px 1px 3px rgba(255,255,255,0.74);
+}
+/* Contenedor general de los artículos. Aplicamos Grid*/
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin: 0 auto;
+    width: 90vmin;
+    padding: 1rem 0;
+}
+
+/* Posición de los artículos en el Grid */
+.trabajos article:nth-of-type(1){grid-area: 1 / 1 / 2 / 4;}
+.trabajos article:nth-of-type(2){grid-area: 2 / 1 / 3 / 4;}
+.trabajos article:nth-of-type(3){grid-area: 3 / 1 / 4 / 4;}
+
+/* Segundo Grid interno de cada artículo */
+.portfolio article{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+/* Posicionamiento del contedero con el título de cada trabajo */
+.portfolio .texto {
+    text-align: center;
+    color: black;
+    font-family: 'Barriecito', cursive;
+    font-size: 2rem;
+    grid-area: 3 / 1 / 4 / 2;
+    z-index: 100;
+}
+
+.texto h2{
+    background-color: #00000093;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 2rem;
+}
+
+/* Posicionamiento del contenedor con la imagen de cada trabajo */
+div.bg-img{grid-area: 1 / 1 / 4 / 2;}
+
+/* Dimensión y posción de cada imagen */
+.work1, .work2, .work3{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20rem;
+}
+/* Imágenes de cada trabajo */
+.work1{ background-image: url(../img/indian.jpg);}
+.work2{ background-image: url(../img/sushi.jpg);}
+.work3{ background-image: url(../img/data.jpg);}
+
+/* Contenedor con descripción de los trabajos */
+.estilos {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-top: 5px solid rgb(129, 189, 164);
+    border-bottom: 5px solid rgb(229, 106, 119);
+}
+
+/* Estilo de párrafo */
+.estilos p{
+    text-align: justify;
+    padding-bottom: 1rem;
+}
+
+/* Estilo de Subtítulos */
+.estilos h3{
+    padding: 1rem 0 2rem 0;
+    font-size: 1rem;
+}
+
+/* Estilo contenedor 'colores' */
+.colores,.tipografias{list-style: none; display: flex;}
+.colores li , .tipografias li{
+    display: inline-block;
+    padding-left: 3rem;
+    flex: 1;
+}
+.colores li p{
+    color: gray;
+    font-size: small
+}
+.colores li div{
+    border: 1px dotted black;
+    width: 55px;
+    height: 55px;
+    border-radius: 10%;
+}
+
+
+/* Colores de los contenedores */
+.colores li:nth-child(1) div{background-color: rgb(233, 140, 1);}
+.colores li:nth-child(2) div{background-color:rgb(157, 141, 127);}
+.colores li:nth-child(3) div{background-color:rgb(223, 205, 168);}
+.colores li:nth-child(4) div{background-color:rgb(59, 82, 88);}
+
+.muestra li:nth-child(1) div{background-color: rgb(72, 72, 82);}
+.muestra li:nth-child(2) div{background-color: rgb(45, 56, 42);}
+.muestra li:nth-child(3) div{background-color:rgb(253, 197, 120);}
+.muestra li:nth-child(4) div{background-color:rgb(255, 118, 37);}
+
+.paleta li:nth-child(1) div{background-color: rgb(102, 143, 177);}
+.paleta li:nth-child(2) div{background-color: rgb(218, 78, 105);}
+.paleta li:nth-child(3) div{background-color:rgb(35, 8, 95);}
+.paleta li:nth-child(4) div{background-color:rgb(187, 239, 193);}
+
+/* Estilo contenedor 'tipografias' */
+.tipografias li img{
+   width: 75%;
+   max-width: 200px;
+}
+
+/************  MODAL BOX trabajos.html  ************/
+
+/* Se esconden las Modal Boxes para la vista MobileFirst */
+.modal { display: none;}
+
+
+
+
+/****************************** 
+     --- contacto.html ---
+******************************/
+
+
+/************  MAIN contacto.html  ************/
+.formulario, .direccion{
+    margin: 0 auto;
+}
+
+/* Estilo para el contenedor del formulario */
+.formulario {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    background-image: url(../img/contacto.background.jpg);
+    background-size: cover;
+    padding: 20px;
+}
+
+/* estilos para los input del formulario  */
+.formulario input[type=text], .formulario select, .formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(255, 255, 255);
+    -webkit-box-shadow: 4px 4px 12px -4px rgba(77,77,77,0.56);
+    -moz-box-shadow: 4px 4px 12px -4px rgba(77,77,77,0.56);
+    box-shadow: 4px 4px 12px -4px rgba(77,77,77,0.56);
+    border-radius: 4px;
+    resize: vertical;
+}
+/* Título */
+.formulario h1{
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 4rem 0;
+    text-align: center;
+    text-shadow: 3px 1px 3px rgba(255,255,255,0.74);
+}
+/* Etiquetas */
+.formulario label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    
+}
+
+.formulario option, .formulario input[placeholder], .formulario textarea{  
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+}
+
+/* Botón de enviar */
+.formulario input[type=submit] {
+    background-color: rgb(229, 106, 119);
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Hover al botón de enviar */
+.formulario input[type=submit]:hover {
+    background-color: rgb(216, 135, 143);
+}
+  
+/* Espacio limpio para las filas */
+.fila:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Tamaño columnas */
+.col-p, .col-g, .formulario input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+}
+/* Dirección postal */
+.postal{
+    min-height: 100px;
+    text-align: center;
+    line-height: 2rem;
+    padding: 2rem;
+}
+/* Mapa e iframe */
+.mapa{height: 300px;}
+.mapa iframe{
+    width: 100%;
+height: 100%;
+}
+
+
+/****************************** 
+     --- error404.html ---
+******************************/
+
+/* Color de fondo para todo el body */
+.error{background-color: rgb(128, 206, 255);}
+
+/* Contenedor imagen de error */
+.error-box{
+    width: 90vw;
+    padding: 3rem 0;
+    margin: 0 auto;
+}
+/* Imagen de error */
+.error-box img{
+    width: 80%;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* Contenido en texto de la página de error.Estilos */
+.error-content{
+    text-align: center;
+    padding: 0 3rem;
+    line-height: 1.6rem;
+    height: 200px;
+}
+
+.error-content h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: 2rem
+}
+
+.error-content h3{padding: 1rem;}
+
+/* Botón con hipervínculo para volver a la página index.html */
+a.boton {
+    display: inline-block;
+    padding: 0.2rem 1.2rem;
+    border: 0.1rem solid #ffffff;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+}
+/* Hover para el botón de volver al index.html */
+a.boton:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+
+
+/*********************
+    MEDIA QUERIES 
+*********************/
+
+
+/* MEDIA QUERIES ESPECÍFICO PARA EL MENÚ */
+@media screen and (max-width: 768px){
+    /*********************
+    MENU
+    *********************/
+
+    /* Ocultamos la imagen */
+    nav input{visibility: hidden;}
+
+    /* mostramos el contenido en fila */
+    nav label{
+        display: block;
+        padding-left: 0.5rem;
+    }
+    nav{ text-align: left;}
+
+    /* Ocultamos los links en versión columna */
+    .menu{
+        flex-direction: column;
+        display: none;
+    }
+    .menu a{ padding-left: 01rem; }
+    .menu li:first-of-type{ padding-top: 1rem;}
+    input:checked ~ ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* MENU NAVEGACIÓN + JAVASCRIPT*/
+    /* Cambio de la imagen del menú cuando el usuario lo activa */
+    .change {
+        background-image: url(../img/flower-bg.png);
+        /* Animación con animate.css */ 
+        animation: rubberBand 0.4s;
+        animation-iteration-count: 1; 
+    }
+
+    /*********************
+    FOOTER
+    *********************/
+    /* Reajuste del tamaño de las columnas y filas */
+    .autoria{
+        width: 100%;
+    }
+
+    .autoria p{ 
+        text-align: center;
+        padding: 0;
+    }
+    .social{width: 100%; }
+
+}
+
+/* // DISPOSITIVOS DE TAMAÑO MEDIANO (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    /*********************
+    inicio.html
+    *********************/
+    .inicio .estructura h2{ grid-area: 1 / 1 / 2 / 2;}
+
+    .estructura section{
+        grid-area: 1 / 1 / 3 / 3;
+        margin-top: 0;
+    }
+    
+    .box-us{grid-area: 1 / 4 / 3 / 7;}
+    
+    .box-work{ grid-area: 3 / 1 / 5 / 4;}
+    
+    .box-contact{grid-area: 3 / 4 / 5 / 7;}
+    
+    .portfolio{width: 80vmax;}
+
+    /*********************
+    error404.html
+    *********************/
+    .error-box{
+        width: 90vw;
+        height: calc(100vh - 250px);
+        padding: 3rem 0;
+        margin: 0 auto;
+        
+    }
+    
+    /*********************
+    nosotros.html
+    *********************/
+    /* Modal Box */
+    .vuelta-front{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 350px auto;
+    }
+    .vuelta-front h2, .vuelta-front p{display: block;}
+    .vuelta-front h2{ grid-area: 2 / 1 / 3 / 3; }
+    .vuelta-front img{ 
+        grid-area: 1 / 1 / 3 / 3;
+        width:330px;
+       justify-self: center;
+    }
+    .vuelta-front p{ grid-area: 2 / 1 / 3 / 3;
+    align-self: flex-end;}
+   
+   
+   
+    /* Tarjetas efecto 3D vueltas */
+    .vuelta-caja {
+        margin: 0 auto;
+        height: 400px;
+        perspective: 1000px;
+    }
+
+    .vuelta{
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Vuelta horizontal cuando el ratón hace hover sobre el elemento*/
+    .vuelta-caja:hover .vuelta {transform: rotateY(180deg);}
+
+    /* Posición de las cajas trasera y delantera*/
+    .vuelta-front, .vuelta-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    /* Animación de la caja trasera */
+    .vuelta-back {transform: rotateY(180deg);}
+
+    /*********************
+    trabajos.html
+    *********************/
+    .trabajos #principal{
+        background-image: url(../img/trabajos.background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-attachment: fixed;
+    }
+
+    /* Posicionamiento Grid de "trabajos" */
+    .trabajos article:nth-of-type(1){grid-area: 1 / 1 / 3 / 3;}
+    .trabajos article:nth-of-type(2){grid-area: 1 / 3 / 3 / 4;}
+    .trabajos article:nth-of-type(3){grid-area: 3 / 1 / 4 / 4;}
+
+    /* Efecto en las imagenes de los trabajos */
+    .opacidad{transition:  0.25s ease-in-out;}
+    .opacidad:hover{ transform: scale(1.03);}
+    .portfolio .texto {text-align: center;}
+    
+    /* Estilo en los contenedores de las imagenes de trabajos */
+    .work1, .work2, .work3{box-shadow: 0px 10px 20px -5px rgba(80, 80, 80, 0.6);}
+    .work1{
+        background: linear-gradient(#ffffff7a, #02020263, transparent), url("../img/indian.jpg") no-repeat center;
+        background-size: cover; 
+    }
+    .work2{
+        background: linear-gradient(#ffffff7a, #02020263, transparent), url("../img/sushi.jpg") no-repeat center;
+        background-size: cover; 
+    }
+    .work3{
+        background: linear-gradient(#ffffff7a, #02020263, transparent), url("../img/data.jpg") no-repeat center;
+        background-size: cover; 
+    }
+
+    /* Estilo Hover en los contenedores de las imagenes de trabajos */
+    .work1:hover{ 
+        background: none, url(../img/indian.jpg), no-repeat, center;
+        background-size: cover;
+    }
+    .work2:hover{
+        background: none, url(../img/sushi.jpg), no-repeat, center;
+        background-size: cover;
+    }
+    .work3:hover{ 
+        background: none, url(../img/data.jpg), no-repeat, center;
+        background-size: cover;
+    }
+
+    .texto h2{
+        background: rgba(255, 255, 255, 0.9);   
+        color: black;
+    }
+    .escondido{ display: none;}
+
+    /* MODAL BOX */
+    /* Posicionamiento de modal box */
+    .modal{
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    /* Estilo de contenido de la modal box */
+    .modal-content{
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Estilo de icono de cierre */
+    .close{
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover, .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /*********************
+    contacto.html
+    *********************/
+    .formulario, .direccion{ width: 80vmax;}
+    /* Posición columnas pequeñas */
+    .col-p {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+    /* Posición columnas grandes */
+    .col-g {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+        
+}
+
+
+/* // DISPOSITIVOS EXTRA GRANDES (ESCRITORIOS) (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+    /*********************
+    index.html
+    *********************/
+    .inicio .estructura h2{ grid-area: 1 / 1 / 2 / 3;}
+    .estructura section{
+        grid-area: 2 / 1 / 3 / 3;
+        margin-top: 3rem;
+    }
+    .box-us{grid-area: 1 / 1 / 5 / 3;}
+    
+    .box-work{ grid-area: 1 / 3 / 5 / 5;}
+    
+    .box-contact{ grid-area: 1 / 5 / 5 / 7;}
+
+   
+    /*********************
+    nosotros.html
+    *********************/
+    .vuelta-front h2{ 
+        grid-area: 1 / 1 / 2 / 2; 
+        align-self: flex-end;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.9)
+    }
+
+    
+    .vuelta-front img{ 
+        grid-area: 1 / 2 / 3 / 3;
+        width:380px;
+       justify-self: center;
+       align-self: flex-end;
+       
+    }
+    .vuelta-front p{ 
+        grid-area: 2 / 1 / 3 / 2;
+        align-self: flex-start;
+        background-color: rgba(0, 0, 0, 0.438);
+        color: white;
+    }
+
+    .opuesto p{grid-area: 2 / 2 / 3 / 3;}
+    .opuesto h2{ grid-area: 1 / 2 / 2 / 3;}
+    .opuesto img{grid-area: 1 / 1 / 3 / 2;}
+
+    /*********************
+    trabajos.html
+    *********************/
+    .portfolio{width: 70vmax;}
+    /* Posicionamiento Grid de "trabajos" */
+    .trabajos article:nth-of-type(1){grid-area: 1 / 1 / 2 / 4;}
+    .trabajos article:nth-of-type(2){grid-area: 2 / 1 / 4 / 3;}
+    .trabajos article:nth-of-type(3){grid-area: 2 / 3 / 4 / 4;}
+} 
+
