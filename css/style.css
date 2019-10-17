@@ -312,13 +312,14 @@ footer{
 }
 
 /* Estilo de párrafo */
-.autoria p{
+.autoria p, .autoria a{
     padding-left: 10%;
     color: white;
     font-size: 0.7rem;
     line-height: 70px;
     text-transform: capitalize;
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 /* Contenedor redes sociales */
